@@ -1,0 +1,12 @@
+---
+- name: blockinfile module demo
+  hosts: all
+  become: true
+  tasks:
+
+  - name: Generate /etc/hosts file
+    ansible.builtin.blockinfile:
+      state: present
+      dest: /etc/hosts
+      content: |
+        ec2-65-0-203-45.ap-south-1.compute.amazonaws.com
